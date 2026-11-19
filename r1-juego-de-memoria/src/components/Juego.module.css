@@ -1,0 +1,33 @@
+.juego {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.panel {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.zona {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-inline-size: 0;
+}
+
+.estado {
+  min-block-size: 3rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-inline-start: 4px solid var(--acento);
+  background: var(--superficie);
+  border-radius: var(--radio);
+}
+
+@media (min-width: 64rem) {
+  .juego {
+    grid-template-columns: minmax(16rem, 20rem) 1fr;
+    align-items: start;
+  }
+}

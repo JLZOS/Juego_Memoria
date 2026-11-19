@@ -1,0 +1,28 @@
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enlace {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  padding-inline: 0.875rem;
+  border-radius: var(--radio);
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.enlace:hover {
+  text-decoration: underline;
+}
+
+.enlace[aria-current="page"] {
+  background: var(--acento);
+  color: var(--sobre-acento);
+}

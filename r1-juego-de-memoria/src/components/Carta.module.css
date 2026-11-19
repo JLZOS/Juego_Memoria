@@ -1,0 +1,78 @@
+.carta {
+  inline-size: 100%;
+  min-block-size: 44px;
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  perspective: 40rem;
+}
+
+.carta[aria-disabled="true"] {
+  cursor: default;
+}
+
+.interior {
+  position: relative;
+  display: block;
+  block-size: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease;
+}
+
+.visible .interior {
+  transform: rotateY(180deg);
+}
+
+.reverso,
+.frente {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--borde-control);
+  border-radius: var(--radio);
+  backface-visibility: hidden;
+}
+
+.reverso {
+  background: var(--acento);
+  color: var(--sobre-acento);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+}
+
+.frente {
+  background: var(--superficie);
+  font-size: clamp(1.75rem, 7vw, 2.75rem);
+  transform: rotateY(180deg);
+}
+
+.descubierta .frente {
+  border-color: var(--exito);
+  border-width: 3px;
+  background: var(--fondo-exito);
+}
+
+.marca {
+  position: absolute;
+  inset-block-start: 0.2rem;
+  inset-inline-end: 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--exito);
+}
+
+.carta:hover:not([aria-disabled="true"]) .reverso {
+  filter: brightness(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interior {
+    transition: none;
+  }
+}
